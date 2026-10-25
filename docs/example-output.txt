@@ -1,0 +1,50 @@
+COMPARISON same request
+FastestRouteStrategy -> R2 | time=21 min | cost=5800.00 | CO2=5.00 | score=21.0000
+  Base time=18, traffic penalty=2, weather penalty=1, final time=21.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+CheapestRouteStrategy -> R3 | time=47 min | cost=1800.00 | CO2=2.00 | score=1800.0000
+  base + distance * rate + priority surcharge + fees = 1000.0 + 10.0 * 80.0 + 0 + 0.0 = 1800.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+EcoFriendlyRouteStrategy -> R4 | time=40 min | cost=2900.00 | CO2=0.50 | score=1.8500
+  Emission * 0.9 + distance * 0.1 = 1.85; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+BalancedRouteStrategy -> R8 | time=32 min | cost=3300.00 | CO2=1.50 | score=0.3512
+  Min-max normalized time/cost/distance/emission weights=0.4/0.3/0.1/0.2, score=0.3511752136752137; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+DistanceFirstStrategy -> R5 | time=40 min | cost=2700.00 | CO2=3.00 | score=8.0000
+  Minimum feasible distance = 8.0 km; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+RUNTIME SWITCHING same planner, three switches
+FastestRouteStrategy -> R2 | time=21 min | cost=5800.00 | CO2=5.00 | score=21.0000
+  Base time=18, traffic penalty=2, weather penalty=1, final time=21.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+CheapestRouteStrategy -> R3 | time=47 min | cost=1800.00 | CO2=2.00 | score=1800.0000
+  base + distance * rate + priority surcharge + fees = 1000.0 + 10.0 * 80.0 + 0 + 0.0 = 1800.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+EcoFriendlyRouteStrategy -> R4 | time=40 min | cost=2900.00 | CO2=0.50 | score=1.8500
+  Emission * 0.9 + distance * 0.1 = 1.85; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+BalancedRouteStrategy -> R8 | time=32 min | cost=3300.00 | CO2=1.50 | score=0.3512
+  Min-max normalized time/cost/distance/emission weights=0.4/0.3/0.1/0.2, score=0.3511752136752137; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+AUTOMATIC SELECTION
+FastestRouteStrategy -> R2 | time=21 min | cost=6300.00 | CO2=5.00 | score=21.0000
+  Base time=18, traffic penalty=2, weather penalty=1, final time=21.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+CheapestRouteStrategy -> R3 | time=47 min | cost=1800.00 | CO2=2.00 | score=1800.0000
+  base + distance * rate + priority surcharge + fees = 1000.0 + 10.0 * 80.0 + 0 + 0.0 = 1800.0; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+EcoFriendlyRouteStrategy -> R4 | time=40 min | cost=2900.00 | CO2=0.50 | score=1.8500
+  Emission * 0.9 + distance * 0.1 = 1.85; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+BalancedRouteStrategy -> R8 | time=32 min | cost=3300.00 | CO2=1.50 | score=0.3512
+  Min-max normalized time/cost/distance/emission weights=0.4/0.3/0.1/0.2, score=0.3511752136752137; minimum score among 7 feasible routes; ties resolved by route ID
+  Rejected: {R7=Unavailable}
+DYNAMIC CONSTRAINTS fastest with budget 3000
+FastestRouteStrategy -> R4 | time=40 min | cost=2900.00 | CO2=0.50 | score=40.0000
+  Base time=38, traffic penalty=2, weather penalty=0, final time=40.0; minimum score among 3 feasible routes; ties resolved by route ID
+  Rejected: {R1=Budget exceeded, R2=Budget exceeded, R6=Budget exceeded, R7=Unavailable, R8=Budget exceeded}
+FAILURE CASES
+No suitable route. Rejections: {}
+No suitable route. Rejections: {R1=Budget exceeded; Deadline exceeded; Emission limit exceeded, R2=Budget exceeded; Deadline exceeded; Emission limit exceeded, R3=Budget exceeded; Deadline exceeded; Emission limit exceeded, R4=Budget exceeded; Deadline exceeded; Emission limit exceeded, R5=Budget exceeded; Deadline exceeded; Emission limit exceeded, R6=Budget exceeded; Deadline exceeded; Emission limit exceeded, R7=Unavailable; Budget exceeded; Deadline exceeded; Emission limit exceeded, R8=Budget exceeded; Deadline exceeded; Emission limit exceeded}
+Weights must sum to one
